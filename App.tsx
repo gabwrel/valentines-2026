@@ -10,6 +10,8 @@ import { TimelineCard } from "./components/TimelineCard";
 import { PlayfulNoButton } from "./components/PlayfulNoButton";
 import { TimelineItem, AppPhase } from "./types";
 import { ChevronDown, Sparkles, Heart, Volume2, VolumeX } from "lucide-react";
+// Import audio so Vite copies and resolves it for production builds (Vercel)
+import musicSrc from "./assets/music/music.mp3";
 
 const timelineData: TimelineItem[] = [
   {
@@ -87,7 +89,7 @@ const App: React.FC = () => {
       style={{ backgroundColor: background }}
       className="min-h-screen selection:bg-rose-200"
     >
-      <audio ref={audioRef} loop src="./assets/music/music.mp3" />
+      <audio ref={audioRef} loop src={musicSrc} />
 
       <HeartBackground fast={phase === "accepted"} />
 
